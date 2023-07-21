@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
+    <title>TKPS Products - Cart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hammer Black Widow 2.0 Hybrid- Ecommerce Website</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="https://static.wixstatic.com/media/a4b91f_080dc31a06994ef2b8e3e8be3b442a97~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled.png" alt="Logo">
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../home.html">HOME</a>
+                        <a class="nav-link" href="home.html">HOME</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
@@ -31,7 +31,7 @@
                             PRODUCTS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
-                            <a class="dropdown-item" href="../store.html">Bowling Balls</a>
+                            <a class="dropdown-item" href="store.html">Bowling Balls</a>
                             <a class="dropdown-item" href="#">TKZ Apperal</a>
                             <a class="dropdown-item" href="#">Bowling Accessories</a>
                         </div>
@@ -50,46 +50,20 @@
         </div>
     </nav>
 
-
-    <!-- Product Detail -->
-    <section class="product-detail">
-        <div class="container">
-            <div class="product-item">
-                <img src="https://cdn11.bigcommerce.com/s-2drope8ce/images/stencil/608x608/products/5116/22020/Vibe_and_Core__99379.1654630088.jpg?c=2" alt="Product 1">
-                <h3>Hammer Ocean Vibe</h3>
-                <p>The new Ocean Vibe should be a very popular release; it performs as you’d expect from a Vibe and looks fantastic. Next to the Black Widow, the Vibe has been the most anticipated and requested ball to bring back. We spent a considerable amount of time on this Vibe to ensure it’s the ball Hammer fans would love, and we’re pretty sure we nailed it!</p>
-                <p class="price">$189.95</p>
-                <label for="product1-weight">Weight:</label>
-                <select id="product1-weight">
-                    <option value="14lbs">14 lbs</option>
-                    <option value="15lbs">15 lbs</option>
-                    <option value="16lbs">16 lbs</option>
-                </select>
-                <button class="add-to-cart">Add to Cart</button>
-
-                <!-- Additional Information -->
-                <h4>Additional Information</h4>
-                <ul>
-                    <li><strong>Color:</strong> Ocean</li>
-                    <li><strong>Core:</strong> Vibe</li>
-                    <li><strong>Core Type:</strong> Symmetrical</li>
-                    <li><strong>Coverstock:</strong> CT Reactive Plus</li>
-                    <li><strong>Coverstock Type:</strong> Pearl Reactive</li>
-                    <li><strong>Differential (DIFF):</strong> 0.042 (15lb)</li>
-                    <li><strong>Factory Finish:</strong> 500, 1000, 2000 Siaair / Crown Factory Polish</li>
-                    <li><strong>Flare Potential:</strong> Medium</li>
-                    <li><strong>Performance:</strong> Mid Performance</li>
-                    <li><strong>Radius of Gyration (RG):</strong> 2.510 (15lb)</li>
-                    <li><strong>Reaction Type:</strong> Length with Strong Backend</li>
-                    <li><strong>Recommended Lane Conditions:</strong> Medium to Heavy Oil</li>
-                    <li><strong>Release Date:</strong> 07-08-2022</li>
-                    <li><strong>X Factor Hook Rating Scale (1-20):</strong> 14</li>
-                </ul>
-            </div>
+    <!-- Cart Content -->
+    <section class="cart-container">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="clear-cart-button">Clear Cart</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <p>Total: <span id="cart-total-price">$0.00</span></p>
         </div>
     </section>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -104,10 +78,12 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="JS/cart.js" type="module"></script>
 
+    <!-- JavaScript for the cart -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="../HTML/JS/cart.js" type="module"></script>
+  
 </body>
 
 </html>

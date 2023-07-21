@@ -1,60 +1,121 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the cart with an empty array to store the items
-    let cart = [];
-  
-    // Function to update the cart count in the navbar
-    function updateCartCount() {
-      const cartCountElement = document.getElementById('cart-count');
-      cartCountElement.innerText = cart.length;
-    }
-  
-    // Function to display the cart items in the cart page
-    function displayCartItems() {
-      const cartListElement = document.getElementById('cart-list');
-      cartListElement.innerHTML = '';
-  
-      cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.innerText = item.name;
-        cartListElement.appendChild(listItem);
-      });
-  
-      updateTotalAmount();
-      updateCartCount();
-    }
-  
-    // Function to calculate and update the total amount in the cart page
-    function updateTotalAmount() {
-      const totalAmountElement = document.getElementById('total-amount');
-      const totalAmount = cart.reduce((total, item) => total + item.price, 0);
-      totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
-    }
-  
-    // Function to handle adding items to the cart
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      displayCartItems();
-    }
-  
-    // Function to handle clearing the cart
-    function clearCart() {
-      cart = [];
-      displayCartItems();
-    }
-  
-    // Event listener for the "Add to Cart" buttons
-    const addToCartButtons = document.getElementsByClassName('add-to-cart');
-    Array.from(addToCartButtons).forEach(button => {
-      button.addEventListener('click', () => {
-        const productItem = button.parentElement;
-        const productName = productItem.querySelector('h3').innerText;
-        const productPrice = parseFloat(productItem.querySelector('.price').innerText.replace('$', ''));
-        addToCart(productName, productPrice);
-      });
-    });
-  
-    // Event listener for the "Clear Cart" button
-    const clearCartButton = document.getElementById('clear-cart-btn');
-    clearCartButton.addEventListener('click', clearCart);
+// cart.js
+
+// Get the cart count element
+const cartCountElement = document.getElementById('cart-count');
+
+// Initialize the cart items array
+let cartItems = [];
+
+// Function to update the cart count
+function updateCartCount() {
+  cartCountElement.textContent = cartItems.length;
+}
+
+// Function to calculate the total price of items in the cart
+function calculateTotalPrice() {
+  return cartItems.reduce((total, item) => total + item.price, 0);
+}
+
+// Function to update the cart total price in the HTML
+function updateCartTotalPrice() {
+  const cartTotalPriceElement = document.getElementById('cart-total-price');
+  const totalPrice = calculateTotalPrice();
+  cartTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+}
+
+// Function to add a product to the cart
+function addToCart(productName, productPrice, productWeight) {
+  const item = {
+    name: productName,
+    price: productPrice,
+    weight: productWeight,
+  };
+  cartItems.push(item);
+  updateCartCount();
+  updateCartTotalPrice();
+  saveCartToLocalStorage();
+}
+
+// Function to remove a product from the cart
+function removeFromCart(index) {
+  cartItems.splice(index, 1);
+  updateCartCount();
+  updateCartTotalPrice();
+  saveCartToLocalStorage();
+  displayCartItems();
+}
+
+// Function to save the cart data to local storage
+function saveCartToLocalStorage() {
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Function to load cart data from local storage
+function loadCartFromLocalStorage() {
+  const cartData = localStorage.getItem('cartItems');
+  if (cartData) {
+    cartItems = JSON.parse(cartData);
+    updateCartCount();
+    updateCartTotalPrice();
+  }
+}
+
+// Function to display cart items in the HTML
+function displayCartItems() {
+  const cartItemsContainer = document.getElementById('cart-items-container');
+  cartItemsContainer.innerHTML = '';
+
+  cartItems.forEach((item, index) => {
+    const cartItemElement = document.createElement('div');
+    cartItemElement.classList.add('cart-item');
+    cartItemElement.innerHTML = `
+      <div class="cart-item-info">
+        <span class="cart-item-name">${item.name}</span>
+        <span class="cart-item-price">$${item.price.toFixed(2)}</span>
+        <span class="cart-item-weight">${item.weight}</span>
+      </div>
+      <button class="remove-from-cart" data-index="${index}">Remove</button>
+    `;
+    cartItemsContainer.appendChild(cartItemElement);
   });
-  
+
+  const removeButtons = document.querySelectorAll('.remove-from-cart');
+  removeButtons.forEach((button) => {
+    button.addEventListener('click', handleRemoveFromCartClick);
+  });
+}
+
+// Function to handle the "Remove" button click event
+function handleRemoveFromCartClick(event) {
+  const index = event.target.dataset.index;
+  removeFromCart(index);
+  displayCartItems();
+}
+
+// Function to clear the cart
+function clearCart() {
+  cartItems = [];
+  updateCartCount();
+  updateCartTotalPrice();
+  saveCartToLocalStorage();
+  displayCartItems();
+}
+
+// Function to initialize the cart
+function initCart() {
+  loadCartFromLocalStorage();
+  displayCartItems();
+}
+
+// Attach click event listener to the "Clear Cart" button
+const clearCartButton = document.getElementById('clear-cart-button');
+clearCartButton.addEventListener('click', clearCart);
+
+// Attach click event listeners to all "Add to Cart" buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+addToCartButtons.forEach((button) => {
+  button.addEventListener('click', handleAddToCartClick);
+});
+
+// Initialize the cart
+initCart();
