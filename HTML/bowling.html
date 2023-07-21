@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>TKPS Products - Cart</title>
+    <!-- Head content goes here -->
+    <title>TKPS Products - Bowling Accessories</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
+    <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="https://static.wixstatic.com/media/a4b91f_080dc31a06994ef2b8e3e8be3b442a97~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled.png" alt="Logo">
@@ -50,17 +52,44 @@
         </div>
     </nav>
 
-    <!-- Cart Content -->
-    <section class="cart-container">
-        <div class="cart-header">
-            <h2>Your Cart</h2>
-            <button id="clear-cart-button">Clear Cart</button>
-        </div>
-        <div class="cart-items" id="cart-items-container">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-        <div class="cart-total">
-            <p>Total: <span id="cart-total-price">$0.00</span></p>
+    <!-- Bowling Accessories Product Listings -->
+    <section class="product-listings">
+        <div class="container">
+            <div class="product-row">
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <a href="PRODUCTS/accessory1.html">
+                        <img src="https://example.com/accessory1.jpg" alt="Accessory 1">
+                    </a>
+                    <h3>Bowling Ball Cleaner</h3>
+                    <p>VIEW MORE</p>
+                    <p class="price">$14.95</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item">
+                    <a href="PRODUCTS/accessory2.html">
+                        <img src="https://example.com/accessory2.jpg" alt="Accessory 2">
+                    </a>
+                    <h3>Bowling Glove</h3>
+                    <p>VIEW MORE</p>
+                    <p class="price">$19.95</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item">
+                    <a href="PRODUCTS/accessory3.html">
+                        <img src="https://example.com/accessory3.jpg" alt="Accessory 3">
+                    </a>
+                    <h3>Bowling Towel</h3>
+                    <p>VIEW MORE</p>
+                    <p class="price">$9.95</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more rows and products as needed -->
         </div>
     </section>
 
@@ -79,11 +108,10 @@
         </div>
     </footer>
 
-    <!-- JavaScript for the cart -->
+    <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-     <script src="../HTML/JS/cart.js" type="module"></script>
-  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../HTML/JS/cart.js" type="module"></script>
 </body>
 
 </html>
