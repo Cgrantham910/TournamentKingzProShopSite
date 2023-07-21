@@ -61,14 +61,14 @@
   
   .navbar-menu li a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s;
   }
   
   .navbar-menu li a:hover {
-    background-color: #f5cb0e;
+    background-color: #b99802;
   }
   
   /* Dropdown menu styles */
@@ -137,7 +137,7 @@
     width: 100%;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: #f5bc00;
+    color: #e99700;
   }
   
   .slide-content h2 {
@@ -188,7 +188,7 @@
   .product-item {
     flex: 0 0 calc(33.33% - 20px);
     background-color: #0e0d0d;
-    border: 1px solid #f7c900;
+    border: 1px solid #ebc106;
     padding: 30px;
     margin: 10px;
     text-align: center;
@@ -204,13 +204,14 @@
   .product-item h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #fcce00;
+    color: #ffd000;
   }
   
   .product-item p {
     font-size: 0.9rem;
     color: #f5bc00;
     margin-bottom: 15px;
+    font-size: large;
   }
   
   .product-item .price {
@@ -223,6 +224,7 @@
     display: block;
     margin-bottom: 5px;
     color: #ffc508;
+    font-size: large;
   }
   
   .product-item select {
@@ -253,6 +255,7 @@
 
   .product-detail ul li {
     color: #fcb900;
+    font-size: larger;
   }
   
   /* Additional styles for the slideshow images */
@@ -278,7 +281,7 @@
   
   .welcome-section p {
     font-size: 24px;
-    color: #504b4b;
+    color: #000000;
     margin-bottom: 40px;
   }
   
@@ -286,7 +289,7 @@
     display: inline-block;
     padding: 15px 30px;
     background-color: #000000;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;

@@ -119,3 +119,27 @@ addToCartButtons.forEach((button) => {
 
 // Initialize the cart
 initCart();
+
+
+
+
+// cart.js
+const cart = [];
+
+function addToCart(productId) {
+  cart.push(productId);
+  console.log(`Product with ID ${productId} added to the cart.`);
+  // You can perform additional operations here if needed
+}
+
+function handleAddToCartButtonClick(event) {
+  const productId = event.target.getAttribute('data-product-id');
+  addToCart(productId);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', handleAddToCartButtonClick);
+  });
+});
