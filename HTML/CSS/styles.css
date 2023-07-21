@@ -12,6 +12,10 @@
     padding-top: 60px; /* Adjust the value as needed */
     margin: 0;
     padding: 0;
+    background-image: url("https://i.pinimg.com/originals/eb/80/2c/eb802c071fde1f7b81bf38927893f3f1.jpg");
+    background-repeat: no-repeat; /* Options: repeat, repeat-x, repeat-y, no-repeat */
+    background-size: cover; /* Options: auto, cover, contain */
+    background-position: center center; /* Options: x-offset y-offset, e.g., 50% 50% */ 
   }
   
   .container {
@@ -115,6 +119,8 @@
     max-height: 300px; /* Adjust the maximum height to fit your desired size */
     max-width: 100%;
     object-fit: contain; /* Maintain image aspect ratio and fit the container */
+    display: block;
+    margin: auto;
   }
   
   .slide-content {
@@ -122,7 +128,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
   }
@@ -290,17 +296,18 @@
   .contact-section {
     padding: 50px 0;
     text-align: center;
+    margin-bottom: auto;
   }
   
   .contact-section h1 {
     font-size: 36px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
   }
   
   .contact-section p {
     font-size: 18px;
-    color: #666;
+    color: #fffefe;
     margin-bottom: 40px;
   }
   
@@ -317,7 +324,7 @@
   .form-group label {
     display: block;
     font-size: 18px;
-    color: #333;
+    color: #ffffff;
   }
   
   .form-group input,
@@ -336,7 +343,7 @@
   .submit-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #333;
+    background-color: #138509;
     color: #fff;
     font-size: 18px;
     border: none;
