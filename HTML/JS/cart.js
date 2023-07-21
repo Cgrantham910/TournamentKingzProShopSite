@@ -1,68 +1,60 @@
-// cart.js
-
-// Function to add an item to the cart
-function addToCart(productId) {
-    const product = products.find(item => item.id === productId);
-    if (product) {
-      cart.push(product);
-      saveCartToLocalStorage();
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the cart with an empty array to store the items
+    let cart = [];
+  
+    // Function to update the cart count in the navbar
+    function updateCartCount() {
+      const cartCountElement = document.getElementById('cart-count');
+      cartCountElement.innerText = cart.length;
     }
-  }
   
-  // Function to save the cart to local storage
-  function saveCartToLocalStorage() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
+    // Function to display the cart items in the cart page
+    function displayCartItems() {
+      const cartListElement = document.getElementById('cart-list');
+      cartListElement.innerHTML = '';
   
-  // Function to display cart items on the cart page
-  function displayCartItems() {
-    const cartList = document.getElementById('cart-list');
-    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerText = item.name;
+        cartListElement.appendChild(listItem);
+      });
   
-    let totalAmount = 0;
-    cartList.innerHTML = '';
+      updateTotalAmount();
+      updateCartCount();
+    }
   
-    cartData.forEach(item => {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        <span>${item.name} - $${item.price.toFixed(2)}</span>
-      `;
-      cartList.appendChild(listItem);
+    // Function to calculate and update the total amount in the cart page
+    function updateTotalAmount() {
+      const totalAmountElement = document.getElementById('total-amount');
+      const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+      totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
+    }
   
-      // Calculate the total amount
-      totalAmount += item.price;
-    });
+    // Function to handle adding items to the cart
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      displayCartItems();
+    }
   
-    // Update the total amount on the page
-    const totalAmountElement = document.getElementById('total-amount');
-    totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
-  }
+    // Function to handle clearing the cart
+    function clearCart() {
+      cart = [];
+      displayCartItems();
+    }
   
-  // Function to clear the cart
-  function clearCart() {
-    cart = [];
-    saveCartToLocalStorage();
-    displayCartItems();
-  }
-  
-  // Event listeners
-  document.addEventListener("DOMContentLoaded", () => {
-    // Example: Assuming you have product buttons with "data-product-id" attribute on the main page.
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    addToCartButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const productId = parseInt(btn.dataset.productId);
-        addToCart(productId);
-        displayCartItems(); // Update cart display after adding a product
+    // Event listener for the "Add to Cart" buttons
+    const addToCartButtons = document.getElementsByClassName('add-to-cart');
+    Array.from(addToCartButtons).forEach(button => {
+      button.addEventListener('click', () => {
+        const productItem = button.parentElement;
+        const productName = productItem.querySelector('h3').innerText;
+        const productPrice = parseFloat(productItem.querySelector('.price').innerText.replace('$', ''));
+        addToCart(productName, productPrice);
       });
     });
   
-    const clearCartBtn = document.getElementById("clear-cart-btn");
-    clearCartBtn.addEventListener("click", () => {
-      clearCart();
-    });
-  
-    // Call displayCartItems when the cart page loads to show any existing items in the cart
-    displayCartItems();
+    // Event listener for the "Clear Cart" button
+    const clearCartButton = document.getElementById('clear-cart-btn');
+    clearCartButton.addEventListener('click', clearCart);
   });
   
