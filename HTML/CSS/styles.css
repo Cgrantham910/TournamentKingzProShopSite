@@ -188,7 +188,7 @@
   .product-item {
     flex: 0 0 calc(33.33% - 20px);
     background-color: #0e0d0d;
-    border: 1px solid #ebc106;
+    border: 1px solid #ffc400;
     padding: 30px;
     margin: 10px;
     text-align: center;
@@ -204,12 +204,12 @@
   .product-item h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #ffd000;
+    color: #ffffff;
   }
   
   .product-item p {
     font-size: 0.9rem;
-    color: #f5bc00;
+    color: #ffffff;
     margin-bottom: 15px;
     font-size: large;
   }
@@ -223,7 +223,7 @@
   .product-item label {
     display: block;
     margin-bottom: 5px;
-    color: #ffc508;
+    color: #ffffff;
     font-size: large;
   }
   
@@ -250,11 +250,11 @@
     cursor: pointer;
   }
   .product-detail h4 {
-    color: #f7b501; /
+    color: #ffffff; /
   }
 
   .product-detail ul li {
-    color: #fcb900;
+    color: #ffffff;
     font-size: larger;
   }
   
