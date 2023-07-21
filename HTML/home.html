@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tournament Kingz Pro Shop</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-logo" href="index.html">
+                <img src="https://static.wixstatic.com/media/a4b91f_080dc31a06994ef2b8e3e8be3b442a97~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled.png" alt="Logo">
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="store.html">Bowling Balls</a></li>
+                        <li><a href="#">TKZ Apperal</a></li>
+                        <li><a href="#">Bowling Acessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <h1>Welcome to the Tournament Kingz Pro Shop LLC</h1>
+            <p>Take your shopping to the next level by purchasing at Tournament Kingz Pro Shop LLC. Providing an unparalleled selection of Bowling products and exceptional customer service, we will always do our best to ensure you find exactly what you have in mind. Check out our collection today.</p>
+            <a href="store.html" class="shop-now-btn">Shop Now</a>
+        </div>
+    </section>
+
+
+<!-- Homepage Slider -->
+<section class="slider" style="margin-top: 120px;">
+    <div class="slider-container">
+      <div class="slide">
+        <img src="https://cdn11.bigcommerce.com/s-2drope8ce/images/stencil/608x608/products/5507/24631/Radioactive_Vibe_and_core__64657.1686677037.jpg?c=2" alt="Slider 1">
+        <div class="slide-content">
+          <h2>Hammer Radioactive Vibe</h2>
+          <p>VIEW MORE</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://cdn11.bigcommerce.com/s-2drope8ce/images/stencil/608x608/products/5506/24624/Dark_Web_Hybrid__97304.1686676806.jpg?c=2" alt="Slider 2">
+        <div class="slide-content">
+          <h2>Hammer Dark Web Hybrid Bowling Ball</h2>
+          <p>VIEW MORE</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://cdn11.bigcommerce.com/s-2drope8ce/images/stencil/608x608/products/4706/19614/Purple_Hammer_and_Core__33712.1620746866.jpg?c=2" alt="Slider 3">
+        <div class="slide-content">
+          <h2>Hammer Purple Pearl Urethane Bowling Ball</h2>
+          <p>VIEW MORE</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add navigation buttons -->
+    <button class="slider-button prev-button" onclick="moveSlider(-1)">&#8249;</button>
+    <button class="slider-button next-button" onclick="moveSlider(1)">&#8250;</button>
+  </section>
+  
+
+
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="container">
+                <div class="product-row">
+                    <!-- Product 1 -->
+                    <div class="product-item">
+                        <a href="product1.html">
+                            <img src="https://cdn-images.bowling.com/ed820ef3-20ba-4457-bbd1-198f6d249578.jpg?class=large" alt="Product 1">
+                        </a>
+                        <h3>Hammer Dyesub Triple Tote Flame</h3>
+                        <p>View More</p>
+                        <p class="price">$104.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+    
+                    <!-- Product 2 -->
+                    <div class="product-item">
+                        <a href="product2.html">
+                            <img src="https://www.coolwick.com/wp-content/uploads/2023/01/Hammer-Red-Hexagram-Front.jpg" alt="Product 2">
+                        </a>
+                        <h3>Hammer Red Hexagram Quick Ship CoolWick Sash Zip Bowling Jersey</h3>
+                        <p>View More</p>
+                        <p class="price">$80.99</p>
+                        <label for="product2-weight">Size:</label>
+                        <select id="product2-weight">
+                            <option value="8lbs">Small</option>
+                            <option value="10lbs">Medium</option>
+                            <option value="12lbs">Large</option>
+                        </select>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+    
+                    <!-- Product 3 -->
+                    <div class="product-item">
+                        <a href="product3.html">
+                            <img src="https://cdn11.bigcommerce.com/s-2drope8ce/images/stencil/608x608/products/5507/24631/Radioactive_Vibe_and_core__64657.1686677037.jpg?c=2" alt="Product 3">
+                        </a>
+                        <h3>Hammer Radioactive Vibe</h3>
+                        <p>View More</p>
+                        <p class="price">$109.95</p>
+                        <label for="product3-weight">Weight:</label>
+                        <select id="product3-weight">
+                            <option value="14lbs">14 lbs</option>
+                            <option value="15lbs">15 lbs</option>
+                            <option value="16lbs">16 lbs</option>
+                        </select>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Add more rows and products as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Tournament Kingz Pro Shop. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/groups/522481012896981" target="_blank">
+                    <img src="path-to-facebook-icon.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/your-instagram-page" target="_blank">
+                    <img src="path-to-instagram-icon.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+     <!-- JavaScript for the slider -->
+     <script src="JS/slideshow.js"></script>
+</body>
+
+</html>
