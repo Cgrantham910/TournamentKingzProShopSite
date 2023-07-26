@@ -1,0 +1,15 @@
+{
+  "name": "tournamentkingzproshopsite",
+  "version": "1.0.0",
+  "description": "I created a website for the tournament kingz pro shop where users can buy hammer brand bowling balls and TKZ clothing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
