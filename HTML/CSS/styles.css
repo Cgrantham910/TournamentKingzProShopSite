@@ -436,7 +436,7 @@
   .cart-container {
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     padding: 20px;
   }
   
@@ -454,7 +454,7 @@
   #clear-cart-btn {
     margin-top: 20px;
     background-color: #ff3333;
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
